@@ -1,0 +1,49 @@
+<body>
+    <h1>Voting Program</h1>
+    <div id="output"></div>
+
+    <script>
+    function runVoting() {
+        var output = document.getElementById("output");
+        var candidates = [];
+        
+        var candidateCount = parseInt(prompt("How many candidates?"));
+        
+        for (var i = 0; i < candidateCount; i++) {
+            var name = prompt("Name for candidate " + (i + 1)).toLowerCase();
+            candidates.push({ name: name, votes: 0 });
+        }
+        
+        var voterCount = parseInt(prompt("How many voters?"));
+        
+        for (var i = 0; i < voterCount; i++) {
+            var vote = prompt("Voter " + (i + 1) + "'s vote").toLowerCase();
+            
+            if (vote) {
+                var candidate = candidates.find(function(c) {
+                    return c.name === vote;
+                });
+                if (candidate) {
+                    candidate.votes++;
+                }
+            }
+        }
+        
+        candidates.sort(function(a, b) {
+            return b.votes - a.votes;
+        });
+        
+        var result = "<h2>The winner is " + candidates[0].name + " with " + candidates[0].votes + " votes.</h2><ul>";
+        
+        candidates.forEach(function(candidate) {
+            result += "<li>" + candidate.name + ": " + candidate.votes + " votes</li>";
+        });
+        
+        result += "</ul>";
+        
+        output.innerHTML = result;
+    }
+    
+    runVoting();
+    </script>
+</body>
