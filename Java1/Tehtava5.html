@@ -1,0 +1,38 @@
+<body>
+    <p id="result"></p>
+
+    <script>
+        function isLeapYear(year) {
+            if (year % 400 === 0) {
+                return true;
+            } else if (year % 100 === 0) {
+                return false;
+            } else if (year % 4 === 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function checkLeapYear() {
+            var year = prompt("Type a year to see if it's a leap year:");
+            if (year === null || year === "") {
+                document.getElementById("result").innerHTML = "You didn't enter a year!";
+                return;
+            }
+            year = parseInt(year);
+            if (isNaN(year)) {
+                document.getElementById("result").innerHTML = "Please enter numbers only!";
+            } else {
+                var result = isLeapYear(year);
+                if (result) {
+                    document.getElementById("result").innerHTML = year + " is a leap year!";
+                } else {
+                    document.getElementById("result").innerHTML = year + " is not a leap year.";
+                }
+            }
+        }
+
+        checkLeapYear();
+    </script>
+</body>
