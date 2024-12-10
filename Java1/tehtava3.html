@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="target"></p>
+<script>
+
+    let luku1 = +prompt("kerro luku");
+    let luku2 = +prompt("kerro luku");
+    let luku3 = +prompt("kerro luku");
+
+    summa = (luku1) + (luku2) + (luku3);
+    product = (luku1) * (luku2) * (luku3);
+    average = ((luku1) + (luku2) + (luku3)) / 3;
+
+
+    document.querySelector("#target").innerHTML = `lukujen summa on ${summa}, lukujen tulo on ${product}, ja lukujen keskiarvo on ${average}.`;
+</script>
+
+</body>
+</html>
