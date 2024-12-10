@@ -1,9 +1,0 @@
-<body>
-    <p id="room">Waiting for your house...</p>
-</body>
-<script>
-    var rooms = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
-    var name = prompt("What's your name?");
-    var pickedRoom = rooms[Math.floor(Math.random() * rooms.length)];
-    document.getElementById("room").innerHTML = name + ", you are in " + pickedRoom + "!";
-</script>
